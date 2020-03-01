@@ -1,0 +1,57 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  TargetRailsVersion: 6.0.2.1 
+  TargetRubyVersion: 2.7.0
+  Exclude:
+    - 'lib/templates/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'bin/**/*'
+
+Style/HashEachMethods:
+  Enabled: false 
+
+Style/HashTransformKeys:
+  Enabled: false 
+
+Style/HashTransformValues:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/routes.rb"
+    - "lib/tasks/**/*"
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - "db/migrate/**/*"
+
+Rails/DynamicFindBy:
+  Whitelist:
+    - find_by_sql
+    - find_by_slug!
+
+Rails/SkipsModelValidations:
+  Whitelist:
+    - touch

@@ -1,0 +1,16 @@
+common: &common
+  adapter:      postgresql
+  encoding: unicode
+  pool:         5
+  timeout:      5000
+  min_messages: warning
+  username: johndoe
+  password: passsword
+
+development:
+  <<: *common
+  database: postcode_checker_development
+
+test:
+  <<: *common
+  database: postcode_checker_test
