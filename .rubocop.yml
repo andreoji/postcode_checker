@@ -4,7 +4,7 @@ require:
   - rubocop-rspec
 
 AllCops:
-  TargetRailsVersion: 6.0.2.1 
+  TargetRailsVersion: 6.0.2.1
   TargetRubyVersion: 2.7.0
   Exclude:
     - 'lib/templates/**/*'
@@ -14,10 +14,10 @@ AllCops:
     - 'bin/**/*'
 
 Style/HashEachMethods:
-  Enabled: false 
+  Enabled: false
 
 Style/HashTransformKeys:
-  Enabled: false 
+  Enabled: false
 
 Style/HashTransformValues:
   Enabled: false
@@ -27,6 +27,10 @@ Style/ClassAndModuleChildren:
 
 Style/BlockDelimiters:
   Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
 
 Style/Documentation:
   Enabled: false
@@ -38,6 +42,7 @@ Metrics/BlockLength:
   Exclude:
     - "config/routes.rb"
     - "lib/tasks/**/*"
+    - "spec/**/*.rb"
 
 Layout/LineLength:
   Max: 120
@@ -46,12 +51,3 @@ Metrics/MethodLength:
   Max: 15
   Exclude:
     - "db/migrate/**/*"
-
-Rails/DynamicFindBy:
-  Whitelist:
-    - find_by_sql
-    - find_by_slug!
-
-Rails/SkipsModelValidations:
-  Whitelist:
-    - touch
