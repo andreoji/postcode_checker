@@ -17,5 +17,14 @@ module PostcodeChecker
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    config.before_configuration do
+      env_file = Rails.root.join('config/env.yml')
+      if File.exist?(env_file)
+        require 'erb'
+        all_vars = YAML.safe_load(ERB.new(IO.read(env_file)).result) || {}
+        env_vars = all_vars[Rails.env]
+        ENV.merge! env_vars if env_vars
+      end
+    end
   end
 end
