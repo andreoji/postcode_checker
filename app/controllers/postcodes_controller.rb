@@ -4,6 +4,7 @@ class PostcodesController < ApplicationController
   before_action :find_postcode, only: :destroy
 
   def index
+    flash[:notice] = nil
     @postcodes = Postcode.all.order(:postcode)
   end
 
