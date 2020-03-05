@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe PostcodesIoService do
   subject(:service) { described_class.new(base_url) }
 
-  let(:base_url) { 'http://postcodes.io/postcodes' }
+  let(:base_url) { 'http://api.postcodes.io/postcodes' }
 
   context 'with a valid postcode' do
     let(:valid_postcode) { 'g36lg' }

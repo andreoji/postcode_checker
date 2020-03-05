@@ -12,7 +12,7 @@ RSpec.describe LsoaWhitelist do
     end
   end
 
-  context "when lsoa isn't the whitlelist" do
+  context "when lsoa isn't in the whitlelist" do
     it 'returns false' do
       expect(lsoa_whitelist.whitelisted?('Woodlands - 05')).to eq false
     end

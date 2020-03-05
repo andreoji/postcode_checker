@@ -52,3 +52,6 @@ Metrics/MethodLength:
   Max: 15
   Exclude:
     - "db/migrate/**/*"
+
+RSpec/ExampleLength:
+  Max: 10

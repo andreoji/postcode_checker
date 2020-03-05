@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Postcode < ApplicationRecord
-  before_validation :normalize_postcode
+  before_validation :sanitize_postcode
   validates :postcode, presence: true, uniqueness: true
 
   def self.whitelisted?(postcode)
@@ -13,7 +13,7 @@ class Postcode < ApplicationRecord
 
   private
 
-  def normalize_postcode
-    self.postcode = postcode.delete(' ').downcase
+  def sanitize_postcode
+    self.postcode = PostcodeSanitizer.sanitize postcode
   end
 end
