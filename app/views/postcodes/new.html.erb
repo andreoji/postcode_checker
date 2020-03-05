@@ -1,0 +1,17 @@
+<h1>Add a postcode to the whitelist</h1>
+
+<% if @postcode && @postcode.errors.present? %>
+  <%= @postcode.errors.full_messages.join(", ") %>
+<% end %>
+
+<%= form_with scope: :postcode, url: postcodes_path, local: true do |form| %>
+  <p>
+    <%= form.label :postcode, 'Postcode:' %>
+    <%= form.text_field :postcode %>
+  </p>
+  <p>
+    <%= form.submit 'Add new postcode' %>
+  </p>
+<% end %>
+
+<p><%= link_to 'Back to the whitelist', postcodes_path %></p>

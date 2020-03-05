@@ -1,0 +1,19 @@
+<h1>Whitelist</h1>
+
+<table>
+  <thead>
+    <th>Postcode</th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @postcodes.each do |p| %>
+      <tr>
+        <td><%= p.postcode %></td>
+        <td><%= link_to 'Delete', postcode_path(p), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p><%= link_to 'Add new postcode', new_postcode_path %></p>
