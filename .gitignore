@@ -39,4 +39,3 @@ config/env.yml
 config/database.yml
 
 .DS_Store
-db/schema.rb

@@ -36,6 +36,7 @@ gem 'pg', '~> 0.18.4'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails', '~> 5.1', '>= 5.1.1'
   gem 'pry', '~> 0.12.2'
   gem 'pry-nav', '~> 0.3.0'
   gem 'pry-rails', '~> 0.3.9'
@@ -54,10 +55,11 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.3'
   gem 'selenium-webdriver'
+  gem 'shoulda-context', '~> 1.2', '>= 1.2.2'
+  gem 'shoulda-matchers', '~> 4.3'
+
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

@@ -12,6 +12,7 @@ AllCops:
     - 'vendor/**/*'
     - '.git/**/*'
     - 'bin/**/*'
+    - 'db/schema.rb'
 
 Style/HashEachMethods:
   Enabled: false
